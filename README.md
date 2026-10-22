@@ -183,6 +183,12 @@ That pi process always uses `@codyagent1_bot` and bypasses the selection menu.
 /telegram-status      Show the assigned bot, config, and connection state
 ```
 
+## Troubleshooting
+
+- **Bot does not respond in Telegram.** Run `/telegram-status` and check that polling is running for the bot you messaged. Each bot can be polled by only one pi session at a time, so disconnect it in any other session first with `/telegram-disconnect`.
+- **A Telegram account is ignored.** Only numeric user IDs in `allowedUserIds` are authorized, not usernames. Get the numeric ID from a bot such as [@userinfobot](https://t.me/userinfobot), add it to the bot config, then run `/telegram-disconnect` and `/telegram-connect` so the new allowlist takes effect.
+- **The wrong bot is connected.** Run `/telegram-disconnect`, then `/telegram-connect` and select the intended bot. For a fixed assignment, start pi with `PI_TELEGRAM_CONFIG` set to that bot's config file instead of using the menu.
+
 ## License and attribution
 
 This project is released under the MIT License. It is derived from [pi-telegram](https://github.com/badlogic/pi-telegram) by Mario Zechner and retains its license and attribution.
