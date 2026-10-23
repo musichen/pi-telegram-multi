@@ -173,6 +173,12 @@ PI_TELEGRAM_CONFIG="$HOME/.pi/agent/telegram-codyagent1_bot.json" pi
 
 That pi process always uses `@codyagent1_bot` and bypasses the selection menu.
 
+## Security notes
+
+- Keep bot config files under `~/.pi/agent/` private. They contain bot tokens (`botToken`), and anyone with a token can control that bot.
+- Only add numeric Telegram user IDs you trust to `allowedUserIds`. Extensions run with your full system permissions, so an allowlisted account can drive the pi session through Telegram.
+- Connect each bot to only one pi session at a time, and disconnect bots you no longer use with `/telegram-disconnect`.
+
 ## Commands
 
 ```text
