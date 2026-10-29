@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Questions
+    url: https://github.com/musichen
+    about: Contact the maintainer through their GitHub profile.
